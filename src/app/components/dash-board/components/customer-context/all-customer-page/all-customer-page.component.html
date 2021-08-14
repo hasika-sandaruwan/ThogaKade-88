@@ -1,1 +1,26 @@
-<p>all-customer-page works!</p>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Customer Id</th>
+    <th>name</th>
+    <th>Salary</th>
+    <th>Address</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>C-004</td>
+    <td>Nimal</td>
+    <td>45000</td>
+    <td>Galle</td>
+    <td>Active</td>
+  </tr>
+  </tbody>
+</table>
+<mat-paginator [length]="100"
+               [pageSize]="10"
+               [pageSizeOptions]="[5, 10, 25, 100]"
+               aria-label="Select page">
+</mat-paginator>
+

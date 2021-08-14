@@ -19,6 +19,7 @@ import { UpdateCustomerPageComponent } from './components/dash-board/components/
 import { DeleteCustomerPageComponent } from './components/dash-board/components/customer-context/delete-customer-page/delete-customer-page.component';
 import { SearchCustomerPageComponent } from './components/dash-board/components/customer-context/search-customer-page/search-customer-page.component';
 import { AllCustomerPageComponent } from './components/dash-board/components/customer-context/all-customer-page/all-customer-page.component';
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -35,15 +36,16 @@ import { AllCustomerPageComponent } from './components/dash-board/components/cus
     SearchCustomerPageComponent,
     AllCustomerPageComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatButtonModule,
-        MatIconModule,
-        MatMenuModule,
-        MatTabsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatTabsModule,
+    MatPaginatorModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
