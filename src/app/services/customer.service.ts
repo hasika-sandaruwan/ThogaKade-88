@@ -20,4 +20,13 @@ export class CustomerService {
     })
   }
 
+  public updateCustomer(dto: CustomerDTO): Observable<any> {
+    return this.http.post('http://localhost:3001/api/v1/customerRoute/saveCustomer', {
+      id: dto.id,
+      name: dto.name,
+      address: dto.address,
+      salary: dto.salary
+    })
+  }
+
 }
