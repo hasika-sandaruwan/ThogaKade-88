@@ -1,27 +1,27 @@
-
+<form [formGroup]="signupForm" (ngSubmit)="signUp()">
 <div class="outer">
   <h3>Sign Up</h3>
   <hr>
 
   <div class="mb-3">
     <label for="fName" class="form-label">Name</label>
-    <input type="text" class="form-control" id="fName">
+    <input formControlName="name" type="text" class="form-control" id="fName">
   </div>
 
 
   <div class="mb-3">
     <label for="contact" class="form-label">Contact Number</label>
-    <input type="tel" class="form-control" id="contact">
+    <input formControlName="contact"  type="tel" class="form-control" id="contact">
   </div>
 
   <div class="mb-3">
     <label for="emailAddress" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="emailAddress" placeholder="name@example.com">
+    <input formControlName="email"  type="email" class="form-control" id="emailAddress" placeholder="name@example.com">
   </div>
 
   <div class="mb-3">
     <label for="password" class="form-label">Password</label>
-    <input type="password" class="form-control" id="password">
+    <input  formControlName="password"  type="password" class="form-control" id="password">
   </div>
 
   <div class="mb-3">
@@ -29,3 +29,4 @@
   </div>
 
 </div>
+</form>
