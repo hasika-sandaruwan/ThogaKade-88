@@ -29,4 +29,10 @@ export class CustomerService {
     })
   }
 
+  public deleteCustomer(id: string): Observable<any> {
+    return this.http.delete('http://localhost:3001/api/v1/customerRoute/deleteCustomer', {
+      headers:{id}
+    })
+  }
+
 }

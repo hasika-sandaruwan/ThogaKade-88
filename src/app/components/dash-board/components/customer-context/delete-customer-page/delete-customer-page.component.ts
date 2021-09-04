@@ -18,13 +18,10 @@ export class DeleteCustomerPageComponent implements OnInit {
 
   constructor(private _customerService: CustomerService) {
   }
-
   ngOnInit(): void {
   }
-
   uploadData() {
-
-    this._customerService.updateCustomer(this.customerForm.get('id')?.value).subscribe(response => {
+    this._customerService.deleteCustomer(this.customerForm.get('id')?.value).subscribe(response => {
       alert('Deleted..');
       this.customerForm.reset();
       // inspectors
