@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CustomerService} from "../../../../../services/customer.service";
 
 @Component({
   selector: 'app-all-customer-page',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllCustomerPageComponent implements OnInit {
 
-  constructor() { }
+  customers:any[]=[];
+
+  constructor(private _service: CustomerService) { }
 
   ngOnInit(): void {
+    this._service.getAllCustomers().subscribe(respose=>{
+      this.customers = respose.data;
+    }, error => {
+      console.log(error);
+    })
   }
 
 }

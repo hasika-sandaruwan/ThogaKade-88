@@ -5,16 +5,16 @@
     <th>name</th>
     <th>Salary</th>
     <th>Address</th>
-    <th>Status</th>
+
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>C-004</td>
-    <td>Nimal</td>
-    <td>45000</td>
-    <td>Galle</td>
-    <td>Active</td>
+  <tr *ngFor="let tempData of customers; index as num">
+    <td>{{tempData.id}}</td>
+    <td>{{tempData.name}}</td>
+    <td>{{tempData.salary}}</td>
+    <td>{{tempData.address}}</td>
+
   </tr>
   </tbody>
 </table>
