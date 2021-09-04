@@ -20,6 +20,8 @@ import { DeleteCustomerPageComponent } from './components/dash-board/components/
 import { SearchCustomerPageComponent } from './components/dash-board/components/customer-context/search-customer-page/search-customer-page.component';
 import { AllCustomerPageComponent } from './components/dash-board/components/customer-context/all-customer-page/all-customer-page.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     MatIconModule,
     MatMenuModule,
     MatTabsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
