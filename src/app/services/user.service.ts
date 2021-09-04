@@ -17,4 +17,12 @@ export class UserService {
     });
   }
 
+  public login(
+    email:string, password: string
+  ):Observable<any>{
+    return this.http.get('http://localhost:3001/api/v1/userRoute/login',{
+      headers:{email,password}
+    });
+  }
+
 }
