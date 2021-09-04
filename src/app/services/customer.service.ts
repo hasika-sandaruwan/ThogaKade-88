@@ -35,4 +35,10 @@ export class CustomerService {
     })
   }
 
+  public searchCustomer(id: string): Observable<any> {
+    return this.http.get('http://localhost:3001/api/v1/customerRoute/getCustomer', {
+      headers:{id}
+    })
+  }
+
 }

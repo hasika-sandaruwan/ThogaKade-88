@@ -1,5 +1,5 @@
 <div class="mb-3">
-  <input type="search" class="form-control" id="search" placeholder="Search here">
+  <input #element (keyup.enter)="search(element.value)" type="search" class="form-control" id="search" placeholder="Search here">
 </div>
 <br>
 
@@ -10,16 +10,14 @@
       <th>name</th>
       <th>Salary</th>
       <th>Address</th>
-      <th>Status</th>
     </tr>
   </thead>
   <tbody>
   <tr>
-    <td>C-004</td>
-    <td>Nimal</td>
-    <td>45000</td>
-    <td>Galle</td>
-    <td>Active</td>
+    <td>{{dataSet?.id}}</td>
+    <td>{{dataSet?.name}}</td>
+    <td>{{dataSet?.salary}}</td>
+    <td>{{dataSet?.address}}</td>
   </tr>
   </tbody>
 </table>

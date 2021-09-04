@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CustomerService} from "../../../../../services/customer.service";
 
 @Component({
   selector: 'app-search-customer-page',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchCustomerPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {
   }
 
+  dataSet:any;
+
+  search(id: string) {
+    this.customerService.searchCustomer(id).subscribe(response=>{
+      this.dataSet = response.data;
+    }, error => {
+      console.log(error)
+    })
+  }
 }
