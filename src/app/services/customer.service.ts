@@ -1,0 +1,23 @@
+import {Injectable} from '@angular/core';
+import CustomerDTO from "../dto/CustomerDTO";
+import {Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CustomerService {
+
+  constructor(private http: HttpClient) {
+  }
+
+  public saveCustomer(dto: CustomerDTO): Observable<any> {
+    return this.http.post('http://localhost:3001/api/v1/customerRoute/saveCustomer', {
+      id: dto.id,
+      name: dto.name,
+      address: dto.address,
+      salary: dto.salary
+    })
+  }
+
+}

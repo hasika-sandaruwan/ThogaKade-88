@@ -1,32 +1,33 @@
+<form [formGroup]="customerForm" (ngSubmit)="uploadData()">
 <div class="mb-3 col-4">
   <mat-form-field class="full-width">
     <mat-label>Customer Id</mat-label>
-    <input matInput placeholder="C-001" type="text">
+    <input formControlName="id" matInput placeholder="C-001" type="text">
     <mat-error>Customer id is required..</mat-error>
   </mat-form-field>
 </div>
 <div class="mb-3 col-4">
   <mat-form-field class="full-width">
     <mat-label>Customer Name</mat-label>
-    <input matInput placeholder="Nimal" type="text">
+    <input formControlName="name" matInput placeholder="Nimal" type="text">
     <mat-error>Customer Name is required..</mat-error>
   </mat-form-field>
 </div>
 <div class="mb-3 col-4">
   <mat-form-field class="full-width">
     <mat-label>Customer Salary</mat-label>
-    <input matInput placeholder="50000" type="number">
+    <input formControlName="salary" matInput placeholder="50000" type="number">
     <mat-error>Customer Salary is required..</mat-error>
   </mat-form-field>
 </div>
 <div class="mb-3  col-4">
   <mat-form-field class="full-width">
     <mat-label>Customer Address</mat-label>
-    <textarea matInput></textarea>
+    <textarea formControlName="address" matInput></textarea>
     <mat-error>Customer Address is required..</mat-error>
   </mat-form-field>
 </div>
-
 <div class="mb-3">
-  <button mat-raised-button color="primary" type="submit">Save Customer</button>
+  <button [disabled]="customerForm.invalid" mat-raised-button color="primary" type="submit">Save Customer</button>
 </div>
+</form>
