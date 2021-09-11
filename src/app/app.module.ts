@@ -24,6 +24,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { PlaceOrderComponent } from './components/dash-board/place-order/place-order.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {HttpClientModule} from "@angular/common/http";
     UpdateCustomerPageComponent,
     DeleteCustomerPageComponent,
     SearchCustomerPageComponent,
-    AllCustomerPageComponent
+    AllCustomerPageComponent,
+    PlaceOrderComponent
   ],
   imports: [
     BrowserModule,
