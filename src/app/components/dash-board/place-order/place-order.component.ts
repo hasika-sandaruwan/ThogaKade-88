@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CustomerService} from "../../../services/customer.service";
 
 @Component({
   selector: 'app-place-order',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaceOrderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _customerService: CustomerService) {
+  }
 
   ngOnInit(): void {
+    this.loadAllCustomers();
+  }
+
+  allCustomer: any[] = [];
+
+  private loadAllCustomers() {
+    this._customerService.getAllCustomers().subscribe(response => {
+      this.allCustomer = response.data;
+      console.log(this.allCustomer);
+    }, error => {
+      console.log(error)
+    })
   }
 
 }
