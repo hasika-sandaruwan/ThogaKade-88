@@ -25,21 +25,26 @@
   <div class="row">
     <div class="col-3">
       <label for="code" class="form-label">Code</label>
-      <select name="" id="code" class="form-control">
-        <option value="#">Test</option>
+      <select id="code" class="form-control"
+              #itemIdElement
+              (change)="setItem(itemIdElement.value)">
+        <option
+          *ngFor="let tempItem of allItems"
+          value="{{tempItem?.code}}"
+        >{{tempItem?.code}}</option>
       </select>
     </div>
     <div class="col-3">
       <label for="description" class="form-label">Description</label>
-      <input type="text" id="description" class="form-control"/>
+      <input type="text" [value]="selectedItem?.description" id="description" class="form-control"/>
     </div>
     <div class="col-2">
       <label for="qtyOnHand" class="form-label">QTY On Hand</label>
-      <input type="text" id="qtyOnHand" class="form-control"/>
+      <input type="text" [value]="selectedItem?.qtyOnHand" id="qtyOnHand" class="form-control"/>
     </div>
     <div class="col-2">
       <label for="unitPrice" class="form-label">Unit Price</label>
-      <input type="number" id="unitPrice" class="form-control"/>
+      <input type="number" [value]="selectedItem?.unitPrice" id="unitPrice" class="form-control"/>
     </div>
     <div class="col-2">
       <label for="requestedQTY" class="form-label">Requested QTY</label>
