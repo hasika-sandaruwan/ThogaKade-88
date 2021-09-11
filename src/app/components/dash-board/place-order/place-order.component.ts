@@ -69,10 +69,20 @@ export class PlaceOrderComponent implements OnInit {
       "code":code,"description":description,"unitPrice":unitPrice,
       "requestedQTY":requestedQTY,"total":total
     });
+    this.calculateCost();
 
   }
 
   delete(num: number) {
     this.cart.splice(num,1);
+    this.calculateCost();
+  }
+
+  totalCost = 0;
+  private calculateCost(){
+    this.totalCost=0;
+    for (const temp of this.cart){
+      this.totalCost+=temp.total;
+    }
   }
 }
