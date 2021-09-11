@@ -16,14 +16,24 @@ export class PlaceOrderComponent implements OnInit {
   }
 
   allCustomer: any[] = [];
+  selectedCustomer: any=null;
 
   private loadAllCustomers() {
     this._customerService.getAllCustomers().subscribe(response => {
       this.allCustomer = response.data;
-      console.log(this.allCustomer);
+      if (response.data.length>0){
+        this.selectedCustomer = response.data[0];
+      }
     }, error => {
       console.log(error)
     })
   }
 
+  setCustomer(id: string) {
+    for (const temp of this.allCustomer){
+      if (temp.id===id){
+        this.selectedCustomer = temp;
+      }
+    }
+  }
 }
