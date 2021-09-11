@@ -1,1 +1,72 @@
-<p>place-order works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <label for="cId" class="form-label">Customer Id</label>
+      <select name="" id="cId" class="form-control">
+        <option value="#">Test</option>
+      </select>
+    </div>
+    <div class="col-3">
+      <label for="cName" class="form-label">Customer Name</label>
+      <input type="text" id="cName" class="form-control"/>
+    </div>
+    <div class="col-3">
+      <label for="cAddress" class="form-label">Customer Address</label>
+      <input type="text" id="cAddress" class="form-control"/>
+    </div>
+    <div class="col-3">
+      <label for="cSalary" class="form-label">Customer Salary</label>
+      <input type="number" id="cSalary" class="form-control"/>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-3">
+      <label for="code" class="form-label">Code</label>
+      <select name="" id="code" class="form-control">
+        <option value="#">Test</option>
+      </select>
+    </div>
+    <div class="col-3">
+      <label for="description" class="form-label">Description</label>
+      <input type="text" id="description" class="form-control"/>
+    </div>
+    <div class="col-2">
+      <label for="qtyOnHand" class="form-label">QTY On Hand</label>
+      <input type="text" id="qtyOnHand" class="form-control"/>
+    </div>
+    <div class="col-2">
+      <label for="unitPrice" class="form-label">Unit Price</label>
+      <input type="number" id="unitPrice" class="form-control"/>
+    </div>
+    <div class="col-2">
+      <label for="requestedQTY" class="form-label">Requested QTY</label>
+      <input type="number" id="requestedQTY" class="form-control"/>
+    </div>
+  </div>
+  <hr>
+
+  <table class="table table-hover">
+    <tbody>
+      <tr>
+        <th>#</th>
+        <th>Code</th>
+        <th>Description</th>
+        <th>Unit Price</th>
+        <th>Requested QTY</th>
+        <th>Total</th>
+        <th>Option</th>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="bottom-bar">
+    <div class="left-side">
+      <h3 class="ttlCost">Total Cost : 0.0 $</h3>
+    </div>
+    <div class="right-side">
+      <button class="btn btn-primary btn-sm">Place Order</button>
+    </div>
+  </div>
+
+</div>
