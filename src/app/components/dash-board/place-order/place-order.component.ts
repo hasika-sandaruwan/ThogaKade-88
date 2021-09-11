@@ -94,6 +94,6 @@ export class PlaceOrderComponent implements OnInit {
     alert(response.message);
     }, error => {
       console.log(error)
-    })
+    });
   }
 }
