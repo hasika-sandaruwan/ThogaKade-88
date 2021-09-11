@@ -48,7 +48,7 @@
     </div>
     <div class="col-2">
       <label for="requestedQTY" class="form-label">Requested QTY</label>
-      <input type="number" id="requestedQTY" class="form-control"/>
+      <input type="number" #element (keyup.enter)="addToCart(element.value)" id="requestedQTY" class="form-control"/>
     </div>
   </div>
   <hr>
@@ -64,6 +64,19 @@
         <th>Total</th>
         <th>Option</th>
       </tr>
+    </tbody>
+    <tbody>
+    <tr *ngFor="let tempCart of cart; index as num">
+      <td>{{num}}</td>
+      <td>{{tempCart?.code}}</td>
+      <td>{{tempCart?.description}}</td>
+      <td>{{tempCart?.unitPrice}}</td>
+      <td>{{tempCart?.requestedQTY}}</td>
+      <td>{{tempCart?.total}}</td>
+      <td>
+        <button class="btn btn-danger btn-sm" (click)="delete(num)">Delete</button>
+      </td>
+    </tr>
     </tbody>
   </table>
 

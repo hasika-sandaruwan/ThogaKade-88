@@ -56,4 +56,23 @@ export class PlaceOrderComponent implements OnInit {
       }
     }
   }
+
+  cart:any[]=[];
+
+  addToCart(requestedQTY: string) {
+    let code=this.selectedItem?.code;
+    let description=this.selectedItem?.description;
+    let unitPrice=Number(this.selectedItem?.unitPrice);
+    let total = Number(requestedQTY)*unitPrice;
+
+    this.cart.push({
+      "code":code,"description":description,"unitPrice":unitPrice,
+      "requestedQTY":requestedQTY,"total":total
+    });
+
+  }
+
+  delete(num: number) {
+    this.cart.splice(num,1);
+  }
 }
